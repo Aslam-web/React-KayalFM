@@ -218,9 +218,9 @@ const SignUp = () => {
                     variant="outlined"
                     startIcon={<CheckIcon />}
                     onClick={VerifyMobileDialog({
-                      openClose:true,
-                      handleClose:()=>{},
-                      mobile:9629906876
+                      openClose: true,
+                      handleClose: () => {},
+                      mobile: 6379971782,
                     })}
                   >
                     Verify
