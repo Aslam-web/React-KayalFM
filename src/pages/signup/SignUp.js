@@ -220,7 +220,7 @@ const SignUp = () => {
                     onClick={VerifyMobileDialog({
                       openClose:true,
                       handleClose:()=>{},
-                      mobile:6379971782
+                      mobile:9629906876
                     })}
                   >
                     Verify
