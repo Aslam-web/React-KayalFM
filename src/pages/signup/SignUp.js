@@ -1,8 +1,8 @@
 // https://github.com/mui/material-ui/blob/v5.8.5/docs/data/material/getting-started/templates/sign-up/SignUp.js
 
 import React, { useState } from "react";
-import { toast } from 'react-toastify'
-import { useDispatch } from 'react-redux'
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -13,14 +13,16 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CheckIcon from "@mui/icons-material/Check";
 import { CssBaseline, InputLabel, MenuItem, Select } from "@mui/material";
+
 import { register } from "../../Redux/features/auth/authSlice";
+import VerifyMobileDialog from "../../components/signup/VerifyMobileDialog";
 
 // Theme
 const theme = createTheme();
 
 const SignUp = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     org_name: "",
@@ -33,9 +35,19 @@ const SignUp = () => {
     password2: "",
   });
 
-  const { name, org_name, state, city, industry, email, mobile, password, password2, } = formData;
+  const {
+    name,
+    org_name,
+    state,
+    city,
+    industry,
+    email,
+    mobile,
+    password,
+    password2,
+  } = formData;
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -48,7 +60,7 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Sign Up button clicked, event.target:" + event.target);
-    if (password==null || password==="" || password !== password2) {
+    if (password == null || password === "" || password !== password2) {
       toast.error("Passwords do not match");
       console.log("Passwords do not match");
     } else {
@@ -62,7 +74,7 @@ const SignUp = () => {
         industry,
         email,
         mobile,
-        password
+        password,
       };
 
       dispatch(register(userData));
@@ -99,8 +111,8 @@ const SignUp = () => {
               onSubmit={handleSubmit}
               sx={{ mt: 3 }}
             >
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+              <Grid container spacing={2} columnSpacing={1} rowSpacing={1}>
+                <Grid item xs={12} sm={6} sx={{ pt: 0, pl: 0 }}>
                   <TextField
                     autoComplete="given-name"
                     name="name"
@@ -159,7 +171,7 @@ const SignUp = () => {
                     <MenuItem value="AP-NL">Nellore</MenuItem>
                   </Select>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={6}>
                   <InputLabel id="industry">Industry</InputLabel>
                   <Select
                     name="industry"
@@ -200,6 +212,19 @@ const SignUp = () => {
                     required
                     fullWidth
                   />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Button
+                    variant="outlined"
+                    startIcon={<CheckIcon />}
+                    onClick={VerifyMobileDialog({
+                      openClose:true,
+                      handleClose:()=>{},
+                      mobile:6379971782
+                    })}
+                  >
+                    Verify
+                  </Button>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField

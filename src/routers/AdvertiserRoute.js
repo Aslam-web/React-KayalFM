@@ -1,8 +1,5 @@
 import React from "react";
-
 import SignupLogin from "../pages/signup/Index";
-
-
 
 const AdvertiserRoute = () => {
   return (
@@ -10,6 +7,6 @@ const AdvertiserRoute = () => {
       <SignupLogin />
     </>
   );
-}
+};
 
-export default AdvertiserRoute
+export default AdvertiserRoute;
