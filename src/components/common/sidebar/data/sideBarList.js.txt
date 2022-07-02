@@ -1,0 +1,348 @@
+export const sidebarList = {
+  "System Configuration": {
+    menuName: "System Configuration",
+    menuLink: " ",
+    accessTo: "",
+    icon: "/assets/images/admin_management.png",
+    submenu: [
+      {
+        menuName: "Admin List",
+        menuLink: "/admin/admins",
+        icon: "../../../assets/images/admin.png",
+      },
+      {
+        menuName: "Cluster List",
+        menuLink: "/admin/clusterlist",
+        icon: "../../../assets/images/cluster.png",
+      }, {
+        menuName: "Cluster of Cluster List",
+        menuLink: "/admin/clusterOfClusterlist",
+        icon: "../../../assets/images/cluster.png",
+      }
+    ],
+  },
+  "User Management": {
+    menuName: "User Management",
+    menuLink: " ",
+    accessTo: "userAdmin",
+    icon: "/assets/images/user_mangement.svg",
+    submenu: [
+      {
+        menuName: "User List",
+        menuLink: "/admin/user",
+        icon: "../../../assets/images/user_list.svg",
+      },
+      {
+        menuName: "User Performance",
+        menuLink: "/admin/userperformance",
+        icon: "../../../assets/images/user_list.svg",
+      },
+      {
+        menuName: "Manage Sales User",
+        menuLink: "/admin/salesuser",
+        icon: "../../../assets/images/user_list.svg",
+      },
+      {
+        menuName: "Sales Users Targets",
+        menuLink: "/admin/targetsetting",
+        icon: "../../../assets/images/targetlog.png",
+      },
+      {
+        menuName: "Trade Partner Targets",
+        menuLink: "/admin/tradePartnerstargetSetting",
+        icon: "../../../assets/images/targetlog.png",
+      },
+    ],
+  },
+  "Audio Management": {
+    menuName: "Audio Management",
+    menuLink: " ",
+    accessTo: "audioAdmin",
+    icon: "/assets/images/admin.png",
+    submenu: [
+      {
+        menuName: "Audio List",
+        menuLink: "/admin/audioadminmanagment/audiomanagment",
+        icon: "../../../assets/images/audioladminist.png",
+      },
+      {
+        menuName: "Audio Request Management",
+        menuLink: "/admin/audioRequestManagement",
+        icon: "../../../assets/images/audioadminmng.png",
+      },
+    ],
+  },
+  "Campaign Management": {
+    menuName: "Campaign Management",
+    menuLink: " ",
+    accessTo: "campaignAdmin",
+    icon: "/assets/images/campaign_management.svg",
+    submenu: [
+      {
+        menuName: "Campaign List",
+        menuLink: "/admin/campaign",
+        icon: "../../../assets/images/campaign_list.svg",
+      }, {
+        menuName: "Failed Campaign List",
+        menuLink: "/admin/failedcampaigns",
+        icon: "../../../assets/images/campaign_failed_list.svg",
+      },
+      {
+        menuName: "Deleted Campaign List",
+        menuLink: "/admin/deletedcampaigns",
+        icon: "../../../assets/images/campaign_failed_list.svg",
+      }
+    ],
+  },
+  "Payment Management": {
+    menuName: "Payment Management",
+    menuLink: " ",
+    accessTo: "campaignAdmin",
+    icon: "/assets/images/ic_rate.png",
+    submenu: [
+      {
+        menuName: "Reconciliation List",
+        menuLink: "/admin/reconciliation",
+        icon: "../../../assets/images/campaign_list.svg",
+      }
+    ],
+  },
+  "Package Management": {
+    menuName: "Package Management",
+    menuLink: " ",
+    accessTo: "packageAdmin",
+    icon: "/assets/images/package_management.svg",
+    submenu: [
+      {
+        menuName: "Manage Frequency package",
+        menuLink: "/admin/package/frequency",
+        icon: "../../../assets/images/manage_frequency_package.svg",
+      },
+      {
+        menuName: "Manage Day package",
+        menuLink: "/admin/package/day",
+        icon: "../../../assets/images/manage_day_package.svg",
+      },
+      {
+        menuName: "Manage Weekly/Weekend package",
+        menuLink: "/admin/package/budget",
+        icon: "../../../assets/images/manage_weekly_package.svg",
+      },
+      {
+        menuName: "Manage Base Discounts",
+        menuLink: "/admin/package/discounts",
+        icon: "../../../assets/images/manage_weekly_package.svg",
+      },
+    ],
+  },
+  "Rate Management": {
+    menuName: "Rate Management",
+    menuLink: " ",
+    accessTo: "rateAdmin",
+    icon: "/assets/images/ic_rate.png",
+    submenu: [
+      {
+        menuName: "Rate Card",
+        menuLink: "/admin/rate-card",
+        icon: "../../../assets/images/rate_card.svg",
+      }, {
+        menuName: "Trade Partner Configuration",
+        menuLink: "/admin/dsaconf",
+        icon: "../../../assets/images/rate_card.svg",
+      },
+    ],
+  },
+
+  "Contact Us": {
+    menuName: "Contact Us",
+    menuLink: "",
+    icon: "/assets/images/contact_us.svg",
+    submenu: [
+      {
+        menuName: "Contact List",
+        menuLink: "/admin/contact",
+        icon: "../../../assets/images/contact_list.svg",
+      },
+      {
+        menuName: "Splash Enquiry",
+        menuLink: "/admin/enquiry",
+        icon: "../../../assets/images/contact_list.svg",
+      },
+      {
+        menuName: "Lead performance",
+        menuLink: "/admin/leaddashboard",
+        icon: "../../../assets/images/contact_list.svg",
+      }
+    ],
+  },
+  "Manage Coupons": {
+    menuName: "Manage Coupons",
+    menuLink: " ",
+    accessTo: "couponAdmin",
+    icon: "/assets/images/manage_coupons.svg",
+    submenu: [
+      {
+        menuName: "Coupon List",
+        menuLink: "/admin/coupons",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "Track Coupons",
+        menuLink: "/admin/trackcoupons",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "Coupon Request",
+        menuLink: "/admin/requestcoupons",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "NON FCT Codes",
+        menuLink: "/admin/nonfctcode",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "NON FCT Code Request",
+        menuLink: "/admin/requestnonfctcode",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+    ],
+  },
+  "Trade Partner": {
+    menuName: "Trade Partner",
+    menuLink: "",
+    accessTo: "FinanceAdmin",
+    icon: "/assets/images/user_mangement.svg",
+    submenu: [
+      {
+        menuName: "Active List",
+        menuLink: "/admin/tp",
+        icon: "../../../assets/images/user_list.svg",
+      },
+      {
+        menuName: "Deleted List",
+        menuLink: "/admin/dsa-delete-request",
+        icon: "../../../assets/images/user_list.svg",
+      },
+      {
+        menuName: "Campaign wise incentive",
+        menuLink: "/admin/incentives",
+        icon: "../../../assets/images/rate_card.svg",
+      },
+      {
+        menuName: "Pay out",
+        menuLink: "/admin/dsaincentives",
+        icon: "../../../assets/images/rate_card.svg",
+      }
+    ],
+  },
+  "Incentive Management": {
+    menuName: "Incentive Management",
+    menuLink: "",
+    accessTo: "AuditAdmin",
+    icon: "/assets/images/user_mangement.svg",
+    submenu: [
+      {
+        menuName: "Incentive List",
+        menuLink: "/admin/auditcampaigns",
+        icon: "../../../assets/images/user_list.svg",
+      }
+    ],
+  },
+  "Coupons": {
+    menuName: "Coupons",
+    menuLink: "",
+    accessTo: "AuditAdmin",
+    icon: "/assets/images/coupon_list.svg",
+    submenu: [
+      {
+        menuName: "Coupon request",
+        menuLink: "/admin/couponrequest",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "Non FCT Code request",
+        menuLink: "/admin/nonfctcoderequest",
+        icon: "../../../assets/images/coupon_list.svg",
+      }
+    ],
+  },
+  "Notification": {
+    menuName: "Notifications",
+    menuLink: "",
+    accessTo: "AuditAdmin",
+    icon: "/assets/images/coupon_list.svg",
+    submenu: [
+      {
+        menuName: "Broadcast",
+        menuLink: "/admin/notification",
+        icon: "../../../assets/images/coupon_list.svg",
+      },
+      {
+        menuName: "Broadcast History",
+        menuLink: "/admin/notificationlist",
+        icon: "../../../assets/images/coupon_list.svg",
+      }
+    ],
+  },
+  "Home page": {
+    menuName: "Home page",
+    menuLink: "",
+    accessTo: "Admin",
+    icon: "/assets/images/newhome.png",
+    submenu: [
+      {
+        menuName: "Splash Screen",
+        menuLink: "/admin/splash_screen",
+        icon: "/assets/images/newhome.png",
+      }
+    ],
+  },
+  "Reports": {
+    menuName: "Reports",
+    menuLink: "",
+    accessTo: "Admin",
+    icon: "/assets/images/reports.svg",
+    submenu: [
+      {
+        accessTo: "Admin",
+        menuName: "Offline Campaign",
+        menuLink: "/admin/offlinecampaignValidate",
+        icon: "../../../assets/images/contact_list.svg",
+      },
+      {
+        menuName: "Online vs Offline Sales",
+        menuLink: "/admin/sales-medium-report",
+        icon: "/assets/images/reports.svg",
+      },
+      {
+        menuName: "Sales Users Target Reports",
+        menuLink: "/admin/tva",
+        icon: "/assets/images/reports.svg",
+      },
+      {
+        menuName: "Trade Partners Target Reports",
+        menuLink: "/admin/TradePartnersReports",
+        icon: "/assets/images/reports.svg",
+      },
+    ],
+  },
+  /* "Role Management" : {
+    menuName:"Role Management",
+    menuLink:"",
+    accessTo:"FinanceAdmin",
+    icon: "/assets/images/user_mangement.svg",
+    submenu: [
+      {
+        menuName: "Roles",
+        menuLink: "/admin/roles",
+        icon: "/assets/images/user_mangement.svg",
+      },
+      {
+        menuName: "Role Access",
+        menuLink: "/admin/role-access-control",
+        icon: "/assets/images/user_mangement.svg",
+      }
+    ],
+  } */
+};

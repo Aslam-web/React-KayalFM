@@ -16,9 +16,9 @@ import { Link } from "react-router-dom";
 
 const pages = [];
 const settings = [
-  { display: "Admin", path: "/admin" },
-  { display: "User", path: "/user" },
-  { display: "Advertiser", path: "/advertiser" },
+  { display: "Employee", path: "/admin/login" },
+  { display: "Trade Partner", path: "/tp/login" }, // change
+  { display: "Advertiser", path: "/user/entry" },
 ];
 
 const ResponsiveAppBar = () => {
