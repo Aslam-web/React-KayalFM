@@ -1,8 +1,10 @@
-import { CssBaseline } from "@mui/material";
+// rename ResponsiveAppBar to <Header/>
+
+import { Box, CssBaseline, Stack } from "@mui/material";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import MainRoute from "../routers/MainRoute";
-import ResponsiveAppBar from "./common/ResponsiveAppBar";
+// import MainRoute from "../routers/MainRoute";
+import NavBar from "./common/NavBar";
 
 function Layout() {
   return (
@@ -10,10 +12,13 @@ function Layout() {
       {/* <MainRoute/> */}
 
       <CssBaseline />
-      <main className="App">
-        <ResponsiveAppBar />
-        <Outlet />
-      </main>
+      <Box className="layout_box">
+        <NavBar />
+        {/* Based on the route below content changes */}
+        <Stack className="layout_box_stack" direction="row"> 
+          <Outlet />
+        </Stack>
+      </Box>
     </>
   );
 }

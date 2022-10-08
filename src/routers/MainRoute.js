@@ -8,7 +8,7 @@ import AdminRoute from './AdminRoute';
 import AdvertiserRoute from './AdvertiserRoute';
 import TPRoute from './TPRoute';
 import Home from "../pages/Home";
-import ResponsiveAppBar from "../components/common/ResponsiveAppBar";
+import ResponsiveAppBar from "../components/common/NavBar";
 
 const MainRoute = () => {
     return (
