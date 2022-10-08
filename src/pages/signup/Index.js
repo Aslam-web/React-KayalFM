@@ -15,9 +15,7 @@ const SignupLogin = () => {
   };
 
   return (
-    <Box
-    >
-      
+    <Box>
       <Tabs centered value={selectedTab} onChange={handleChange}>
         <Tab icon={<LoginIcon />} label="Login" />
         <Tab icon={<AddBoxTwoToneIcon />} label="Sign Up" />

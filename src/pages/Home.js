@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import VerifyMobileDialog from "../components/signup/VerifyMobileDialog";
 
 const Home = () => {
@@ -17,11 +17,14 @@ const Home = () => {
 
   return (
     <>
-      <h1>APPLICATION HOME PAGE</h1>
-      <Button onClick={handleClickOpen}>
+      <Box className="box" component="span">
+        {/* <h1>APPLICATION HOME PAGE</h1>
+        <Button>Save</Button> */}
+      </Box>
+      {/* <Button onClick={handleClickOpen}>
         Open form dialog
       </Button>
-      <VerifyMobileDialog openClose={open} handleClose={handleClose} mobile={mobileNumber}/>
+      <VerifyMobileDialog openClose={open} handleClose={handleClose} mobile={mobileNumber}/> */}
     </>
   );
 };
