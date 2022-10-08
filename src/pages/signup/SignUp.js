@@ -1,5 +1,10 @@
 // https://github.com/mui/material-ui/blob/v5.8.5/docs/data/material/getting-started/templates/sign-up/SignUp.js
 
+
+/**
+ * Testing Git commit flow
+ */
+
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
