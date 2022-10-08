@@ -7,17 +7,17 @@ export const sidebarList = {
     submenu: [
       {
         menuName: "Admin List",
-        path: "/admin/admins",
+        path: "/admin/adminList",
         icon: "<AiFillAppstore/>",
       },
       {
         menuName: "Cluster List",
-        path: "/admin/clusterlist",
+        path: "/admin/clusterList",
         icon: "<AiFillAppstore/>",
       },
       {
         menuName: "Cluster of Cluster List",
-        path: "/admin/clusterOfClusterlist",
+        path: "/admin/clusterOfClusterList",
         icon: "<AiFillAppstore/>",
       },
     ],
