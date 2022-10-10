@@ -18,7 +18,7 @@ const pages = [];
 const settings = [
   { display: "Employee", path: "/admin/login" },
   { display: "Trade Partner", path: "/tp/login" }, // change
-  { display: "Advertiser", path: "/user/entry" },
+  { display: "Advertiser", path: "/user/login" },
 ];
 
 const NavBar = () => {
