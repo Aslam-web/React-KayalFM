@@ -18,7 +18,7 @@ import { login } from "../../Redux/features/auth/authSlice";
 // Theme
 const theme = createTheme();
 
-const Login = () => {
+const TPLogin = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -56,7 +56,7 @@ const Login = () => {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Trade Partner Sign in
             </Typography>
             <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 1 }}>
               <TextField
@@ -108,4 +108,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default TPLogin;

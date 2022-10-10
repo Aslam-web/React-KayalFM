@@ -1,67 +1,64 @@
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "./components/RequireAuth";
 
-import Layout from "./components/Layout";
+import Layout from "./layouts/Layout";
 import Missing from "./pages/Missing";
 
+import AdminLogin from './components/admin/AdminLogin'
+import AdminLayout from "./layouts/AdminLayout";
 import AdminList from "./components/admin/systemConfiguration/AdminList";
 import ClusterOfClusterList from "./components/admin/systemConfiguration/ClusterOfClusterList";
 import ClusterList from "./components/admin/systemConfiguration/ClusterList";
 
-import TPHome from "./components/tp/TPHome";
+import TPLogin from "./components/tp/TPLogin"
+import TPLayout from "./layouts/TPLayout"
 import InvoiceDetails from "./components/tp/InvoiceDetails";
 import ContactDetails from "./components/tp/ContactDetails";
 import ViewCampaign from "./components/tp/ViewCampaign";
 
-import UserHome from "./components/user/UserHome";
+import UserLogin from "./components/user/login/UserLogin";
+import UserLayout from "./layouts/UserLayout";
 import Campaign from "./components/user/Campaign";
 import UpdateKycDetails from "./components/user/UpdateKycDetails";
 import TermsAndConditions from "./components/user/TermsAndConditions";
 
-import Home from "./pages/Home";
-import SignupLogin from "./pages/signup/Index";
-import Login from "./pages/signup/Login";
+import Welcome from "./pages/Welcome";
 
 function App() {
   return (
-    <div className="App_js">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/* public routes */}
-          {/* Admin Login */}
-          {/* TP Login */}
-          {/* User Login/Signup */}
-          <Route path="admin/login" element={<Login />} />
-          <Route path="tp/login" element={<Login />} />
-          <Route path="user/entry" element={<SignupLogin />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
 
-          <Route path="/" element={<Home />} />
+        {/* Public routes */}
+        <Route index element={<Welcome />} />
+        {/* <Route path="user" element={<UserLogin />}/> */}
+        <Route path="user/login" element={<UserLogin />}/>
+        <Route path="tp/login" element={<TPLogin />}/>
+        <Route path="admin/login" element={<AdminLogin />}/>
 
-          {/* we want to protect these routes */}
-          <Route path="admin/" element={<RequireAuth allowedRoles={[1001]} />}>
-            <Route index element={<AdminList />} />
-            <Route path="adminList" element={<AdminList />} />
-            <Route path="clusterList" element={<ClusterList/>} />
-            <Route path="clusterOfClusterlist" element={<ClusterOfClusterList/>} />
-          </Route>
-          <Route path="tp/" element={<RequireAuth allowedRoles={[1001]} />}>
-            <Route index element={<TPHome />} />
-            <Route path="invoicedetails" element={<InvoiceDetails />} />
-            <Route path="contactdetails" element={<ContactDetails />} />
-            <Route path="viewcampaign" element={<ViewCampaign />} />
-          </Route>
-          <Route path="user/" element={<RequireAuth allowedRoles={[1001]} />}>
-            <Route element={<UserHome />} />
-            <Route path="campaign" element={<Campaign />} />
-            <Route path="updatekycdetails" element={<UpdateKycDetails />} />
-            <Route path="termsandconditions" element={<TermsAndConditions />} />
-          </Route>
-
-          {/* catch all */}
-          <Route path="*" element={<Missing />} />
+        {/* Protected routes */}
+        <Route path="user" element={<UserLayout />}>
+          <Route path="home" element={<Campaign />} />
+          <Route path="updatekycdetails" element={<UpdateKycDetails />} />
+          <Route path="termsandconditions" element={<TermsAndConditions />} />
         </Route>
-      </Routes>
-    </div>
+
+        <Route path="admin" element={<AdminLayout />}>
+          <Route path="adminList" element={<AdminList />} />
+          <Route path="clusterList" element={<ClusterList />} />
+          <Route path="clusterOfClusterlist" element={<ClusterOfClusterList />} />
+        </Route>
+
+        <Route path="tp" element={<TPLayout />}>
+          <Route path="invoicedetails" element={<InvoiceDetails />} />
+          <Route path="contactdetails" element={<ContactDetails />} />
+          <Route path="viewcampaign" element={<ViewCampaign />} />
+        </Route>
+
+        {/* catch all */}
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
   );
 }
 
