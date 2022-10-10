@@ -31,25 +31,27 @@ function App() {
 
         {/* Public routes */}
         <Route index element={<Welcome />} />
-        {/* <Route path="user" element={<UserLogin />}/> */}
-        <Route path="user/login" element={<UserLogin />}/>
-        <Route path="tp/login" element={<TPLogin />}/>
-        <Route path="admin/login" element={<AdminLogin />}/>
 
         {/* Protected routes */}
         <Route path="user" element={<UserLayout />}>
-          <Route path="home" element={<Campaign />} />
+          <Route index element={<UserLogin />} />
+          <Route path="login" element={<UserLogin />} />
+          <Route path="campaign" element={<Campaign />} />
           <Route path="updatekycdetails" element={<UpdateKycDetails />} />
           <Route path="termsandconditions" element={<TermsAndConditions />} />
         </Route>
 
         <Route path="admin" element={<AdminLayout />}>
+          <Route index element={<AdminLogin />} />
+          <Route path="login" element={<AdminLogin />} />
           <Route path="adminList" element={<AdminList />} />
           <Route path="clusterList" element={<ClusterList />} />
           <Route path="clusterOfClusterlist" element={<ClusterOfClusterList />} />
         </Route>
 
         <Route path="tp" element={<TPLayout />}>
+          <Route index element={<TPLogin />} />
+          <Route path="login" element={<TPLogin />} />
           <Route path="invoicedetails" element={<InvoiceDetails />} />
           <Route path="contactdetails" element={<ContactDetails />} />
           <Route path="viewcampaign" element={<ViewCampaign />} />
