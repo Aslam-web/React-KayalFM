@@ -6,7 +6,6 @@
  */
 
 import React, { useState } from "react";
-import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 
 import Avatar from "@mui/material/Avatar";
@@ -22,6 +21,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import { CssBaseline, InputLabel, MenuItem, Select } from "@mui/material";
 
 import { register } from "../../../Redux/features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 // Theme
 const theme = createTheme();
@@ -30,9 +30,9 @@ const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
     org_name: "",
-    state: "",
-    city: "",
-    industry: "",
+    state: "TN",
+    city: "TN-CH",
+    industry: "IT",
     email: "",
     mobile: "",
     password: "",
@@ -52,6 +52,7 @@ const SignUp = () => {
   } = formData;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -65,10 +66,9 @@ const SignUp = () => {
     event.preventDefault();
     console.log("Sign Up button clicked, event.target:" + event.target);
     if (password == null || password === "" || password !== password2) {
-      toast.error("Passwords do not match");
+      alert("Passwords do not match");
       console.log("Passwords do not match");
     } else {
-      toast.error("Passwords match");
       console.log("Passwords match");
       const userData = {
         name,
@@ -81,7 +81,9 @@ const SignUp = () => {
         password,
       };
 
-      dispatch(register(userData));
+      dispatch(register(userData)).then(() => {
+        navigate("../user/home", { replace: true });
+      })
     }
   };
 
@@ -105,7 +107,7 @@ const SignUp = () => {
 
             {/* Title*/}
             <Typography component="h1" variant="h5">
-              Sign up
+              User Sign up
             </Typography>
 
             {/* Form*/}
@@ -226,7 +228,7 @@ const SignUp = () => {
                     //   handleClose: (e) => {e.preventDefault()},
                     //   mobile: 6379971782,
                     // })}
-                    onClick={(e)=>{e.preventDefault()}}
+                    onClick={(e) => { e.preventDefault() }}
                   >
                     Verify
                   </Button>

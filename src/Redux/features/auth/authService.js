@@ -7,11 +7,9 @@ const register = async (userData) => {
   // const response = await axios.post(`${API_URL}register`, userData);
   const response = await axios.post(API_URL + "register", userData);
 
-    console.log("response:"+response);
   if (response.data) {
-    const { user, message } = response.data;
-    localStorage.setItem("user", JSON.stringify(user));
-    if(message) console.log(message);
+    localStorage.setItem("user", JSON.stringify(response.data.user));
+
   } else {
     console.log("Unable to create user. returned response:" + response.data);
     alert("Unable to create user. returned response:" + response.data)

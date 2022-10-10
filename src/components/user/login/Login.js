@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { login } from "../../../Redux/features/auth/authSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Theme
 const theme = createTheme();
@@ -25,6 +26,8 @@ const Login = () => {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const onChange = (event) => {
     setFormData((prevState) => ({
@@ -37,7 +40,15 @@ const Login = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log("Login From submitted");
-    dispatch(login({ email: formData.email, password: formData.password }));
+    dispatch(login({ email: formData.email, password: formData.password })).then(() => {
+      if (location.state?.from) {
+        // console.log("location: ", location);
+        // console.log("location before Login page: ", location.state.from.pathname);
+        navigate(location.state.from);
+      } else {
+        navigate("user/home");
+      }
+    })
   };
 
   return (
@@ -56,7 +67,7 @@ const Login = () => {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              User Sign in
             </Typography>
             <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 1 }}>
               <TextField
